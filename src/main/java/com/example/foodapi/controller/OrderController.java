@@ -33,4 +33,9 @@ public class OrderController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @PostMapping("/confirm")
+    public ResponseEntity<String> confirmPayment(@RequestParam Long orderId){
+        orderService.confirmPayment(orderId);
+        return ResponseEntity.ok("Payment success");
+    }
 }

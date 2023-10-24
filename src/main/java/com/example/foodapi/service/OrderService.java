@@ -10,4 +10,5 @@ public interface OrderService {
     void placeOrder(Long customerId);
     List<Order> getAllOrder(Long customerId);
     OrderDetailDto getOrderDetailById(Long orderId);
+    void confirmPayment(Long orderId);
 }

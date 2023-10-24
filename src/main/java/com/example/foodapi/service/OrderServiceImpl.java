@@ -37,6 +37,8 @@ public class OrderServiceImpl implements OrderService {
             }
             order.setItems(clonedItems);
             orderRepository.save(order);
+            cart.setItems(null);
+            cartRepository.save(cart);
         }
     }
     @Override
@@ -73,6 +75,19 @@ public class OrderServiceImpl implements OrderService {
         }
 
         return null;
+    }
+    @Override
+    public void confirmPayment(Long orderId) {
+        Optional<Order> optionalOrder = orderRepository.findById(orderId);
+
+        if (optionalOrder.isPresent()) {
+            Order order = optionalOrder.get();
+
+            if ("Pending".equals(order.getOrderStatus())) {
+                order.setOrderStatus("Success");
+                orderRepository.save(order);
+            }
+        }
     }
 }
 
