@@ -30,9 +30,9 @@ public class SecurityConfig {
 
     private static final String[] SECURED_URLs = {
             "/api/v1/customer/**",
-            "/api/v1/cart",
-            "/api/v1/item",
-            "/api/v1/order",
+            "/api/v1/cart/**",
+            "/api/v1/item/**",
+            "/api/v1/order/**",
     };
 
     private static final String[] UN_SECURED_URLs = {
