@@ -22,7 +22,7 @@ public class Item {
     private String itemName;
     private String description;
     private String imageUrl;
-    private Category category;
+    private String category;
     private int quantity;
     private double cost;
 
