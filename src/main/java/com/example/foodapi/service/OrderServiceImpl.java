@@ -68,6 +68,7 @@ public class OrderServiceImpl implements OrderService {
                 orderItemDto.setItemName(item.getItemName());
                 orderItemDto.setQuantity(quantity);
                 orderItemDto.setTotalPrice(totalPrice);
+                orderItemDto.setImageUrl(item.getImageUrl());
                 orderItemDtos.add(orderItemDto);
             }
             orderDetailDto.setOrderItems(orderItemDtos);
